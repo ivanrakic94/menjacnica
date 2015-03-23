@@ -1,5 +1,6 @@
 package valute;
 
+import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
 public class Valuta {
@@ -20,6 +21,27 @@ public class Valuta {
 	public void setSkraceniNaziv(String skraceniNaziv) {
 		if(skraceniNaziv != null) this.skraceniNaziv = skraceniNaziv;
 		else throw new NullPointerException("Morate uneti skraceni naziv");
+	}
+	
+	public void dodajKurs(Kurs kurs) {
+		kursevi.add(kurs);
+	}
+	
+	public void obrisiKurs(GregorianCalendar datum) {
+		for (int i = 0; i < kursevi.size(); i++) {
+			if(kursevi.get(i).getDatum().equals(datum)) {
+				kursevi.remove(i);
+				break;
+			}
+		}
+	}
+	
+	public Kurs pronadjiKurs(GregorianCalendar datum) {
+		for (int i = 0; i < kursevi.size(); i++) {
+			if(kursevi.get(i).getDatum().equals(datum)) 
+				return kursevi.get(i);
+		}
+		return null;
 	}
 	
 	@Override
