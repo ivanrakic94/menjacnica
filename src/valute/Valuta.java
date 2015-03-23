@@ -11,13 +11,15 @@ public class Valuta {
 		return naziv;
 	}
 	public void setNaziv(String naziv) {
-		this.naziv = naziv;
+		if(naziv != null) this.naziv = naziv;
+		else throw new NullPointerException("Morate uneti naziv");
 	}
 	public String getSkraceniNaziv() {
 		return skraceniNaziv;
 	}
 	public void setSkraceniNaziv(String skraceniNaziv) {
-		this.skraceniNaziv = skraceniNaziv;
+		if(skraceniNaziv != null) this.skraceniNaziv = skraceniNaziv;
+		else throw new NullPointerException("Morate uneti skraceni naziv");
 	}
 	
 	@Override

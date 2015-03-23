@@ -11,25 +11,29 @@ public class Kurs {
 		return prodajniKurs;
 	}
 	public void setProdajniKurs(double prodajniKurs) {
-		this.prodajniKurs = prodajniKurs;
+		if(prodajniKurs > 0) this.prodajniKurs = prodajniKurs;
+		else throw new RuntimeException("Kurs mora biti pozitivan.");
 	}
 	public double getKupovniKurs() {
 		return kupovniKurs;
 	}
 	public void setKupovniKurs(double kupovniKurs) {
-		this.kupovniKurs = kupovniKurs;
+		if(kupovniKurs > 0) this.kupovniKurs = kupovniKurs;
+		else throw new RuntimeException("Kurs mora biti pozitivan.");
 	}
 	public double getSrednjiKurs() {
 		return srednjiKurs;
 	}
 	public void setSrednjiKurs(double srednjiKurs) {
-		this.srednjiKurs = srednjiKurs;
+		if(srednjiKurs > 0) this.srednjiKurs = srednjiKurs;
+		else throw new RuntimeException("Kurs mora biti pozitivan.");
 	}
 	public GregorianCalendar getDatum() {
 		return datum;
 	}
 	public void setDatum(GregorianCalendar datum) {
-		this.datum = datum;
+		if(datum != null) this.datum = datum;
+		else throw new NullPointerException("Morate uneti datum.");
 	}
 	
 	@Override
