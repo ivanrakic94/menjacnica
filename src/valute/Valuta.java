@@ -24,6 +24,7 @@ public class Valuta {
 	}
 	
 	public void dodajKurs(Kurs kurs) {
+
 		if(kurs != null) kursevi.add(kurs);
 		else throw new NullPointerException("Morate uneti neki kurs.");
 	}
@@ -46,6 +47,7 @@ public class Valuta {
 				return kursevi.get(i);
 		}
 		} else throw new NullPointerException("Morate uneti datum");
+
 		return null;
 	}
 	
